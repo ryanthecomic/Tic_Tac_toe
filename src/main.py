@@ -62,7 +62,6 @@ def main():
                 print("2. Jogo contra a IA")
                 print("3. Voltar ao Menu Principal")
                 subprocess.run(["python", "src/game/init.py"])
-                SystemExit()
                 break
         elif choice == "3":
             if recover_password():

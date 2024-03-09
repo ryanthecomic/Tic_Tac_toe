@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <!-- Adicione quaisquer estilos adicionais ou links para folhas de estilo externas aqui -->
+</head>
+<body>
+
+<h2>Cadastrar</h2>
+<form id="signup-form">
+    <label for="username">Nome de usuário:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="button" onclick="submitSignup()">Cadastrar</button>
+</form>
+
+<script>
+    function submitSignup() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        var data = {'username': username, 'password': password};
+        
+        fetch('http://localhost:5000/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if ('message' in data) {
+                alert(data.message);
+                window.location.href = '/';
+            } else if ('error' in data) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+
+</body>
+</html>

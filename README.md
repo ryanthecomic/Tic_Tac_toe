@@ -1,7 +1,10 @@
 Para instalar os pacotes necessários para este programa 
-abra o powershell neste diretório e escreva o comando:
+executa o arquivo bat neste diretório.
 
-pip install -r requirements.txt
+requirements.bat:
+
+!pip install flask
+!pip install werkzeug
 
 Tenha certeza de que todos os arquivos 'services' 
 estejam rodando em terminais dedicados 

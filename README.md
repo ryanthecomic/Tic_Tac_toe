@@ -1,7 +1,7 @@
 Para instalar os pacotes necessários para este programa 
 executa o arquivo bat neste diretório.
 
-requirements.bat:
+requirements.bat contains:
 
 !pip install flask
 !pip install werkzeug

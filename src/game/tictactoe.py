@@ -29,12 +29,12 @@ def victory(array,c):
     else:
         return False
 def set(array,caractere,i,j):
-    if array[i][j] == "n":
+    if array[i][j] == "":
         array[i][j] = caractere
         return True
     return False
 def setArray():
-    array = [["n" for j in range(3)] for i in range(3)]
+    array = [["" for j in range(3)] for i in range(3)]
     return array
 def check_draw(array):
     for row in array:

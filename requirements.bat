@@ -1,2 +1,4 @@
-Flask==2.0.1
-requests==2.26.0
+pip install flask
+pip install werkzeug
+pip install requests
+pip install pygame

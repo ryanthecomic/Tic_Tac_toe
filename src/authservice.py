@@ -31,22 +31,6 @@ def process_signup():
     users[username] = {'password': hashed_password}
     return jsonify({'message': 'Cadastro realizado com sucesso'}), 201
 
-@app.route('/recover_password', methods=['GET'])
-def recover():
-    return render_template('recover_password.html')
-
-@app.route('/recover_password', methods=['POST'])
-def process_recover():
-    data = request.get_json()
-    username = data.get('username')
-    password = data.get('password')
-
-    if username not in users or not check_password_hash(users[username]['password'], password):
-        return jsonify({'error': 'Credenciais inválidas'}), 401
-
-    # Redirecione para a página do jogo após o login bem-sucedido
-    return redirect(url_for('game'))
-
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
